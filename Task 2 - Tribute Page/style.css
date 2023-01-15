@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0px;
+    color: darkslategray;
+}
+.bio{
+    text-align: center;
+    font-size: 40px;
+    color: darkslategray;
+}
+.img1{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    border: 6px solid rgba(37, 36, 37, 0.973);
+    margin-left: 163px;
+    
+}
+p{
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 20px;
+    text-align: justify;
+}
+.container{
+    box-shadow: 5px 10px 20px #5f5e5e;
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
