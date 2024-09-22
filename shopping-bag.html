@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Bag</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto py-8 px-6">
+    
+    <h1 class="text-4xl font-extrabold mb-6 text-gray-900">Shopping Bag</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <div class="lg:col-span-2">
+
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-6 flex space-x-6">
+          
+          <div class="w-1/4">
+            <img src="path/to/product-image.png" alt="3-seat sofa" class="w-full h-full object-cover rounded-lg" />
+          </div>
+
+          <div class="w-3/4 flex flex-col justify-between">
+            <div>
+              <h2 class="text-2xl font-semibold">GAMMALBYN</h2>
+              <p class="text-gray-500 mb-2">3-seat sofa, grey</p>
+
+              <div class="flex items-center space-x-4 mb-3">
+                <button onclick="decreaseQuantity()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg">-</button>
+                <input id="quantity" type="number" value="1" class="w-12 border text-center rounded-lg py-2" min="1"/>
+                <button onclick="increaseQuantity()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg">+</button>
+              </div>
+
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <p id="price" class="text-2xl font-bold text-gray-900">Rs. 20,990</p>
+              <div class="flex space-x-3">
+                <button class="p-2 text-gray-500 hover:text-blue-500 rounded-lg transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg></button>
+                <button onclick="removeItem()" class="p-2 text-gray-500 hover:text-red-500 rounded-lg transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="text-2xl font-semibold mb-6">Order Summary</h3>
+
+        <div class="flex justify-between text-lg mb-3">
+          <span>Products</span>
+          <span id="summaryPrice">Rs. 20,990</span>
+        </div>
+        <div class="flex justify-between text-lg mb-6 border-t pt-3">
+          <span>Subtotal</span>
+          <span id="subtotalPrice" class="font-bold">Rs. 20,990</span>
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded-lg mb-6">
+          <button onclick="toggleDiscountCode()" class="text-blue-500 hover:text-blue-700 font-medium flex items-center space-x-1">
+            <span>Apply discount code</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </button>
+          
+          <div id="discountCodeSection" class="hidden mt-4">
+            <input type="text" id="discountCode" placeholder="Enter discount code" class="w-full px-4 py-2 border rounded-lg mb-2"/>
+            <button onclick="applyDiscount()" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-lg">Apply</button>
+          </div>
+        </div>
+
+        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition focus:outline-none">Continue to checkout ➔</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="shopping-bag.js"></script>
+</body>
+</html>
