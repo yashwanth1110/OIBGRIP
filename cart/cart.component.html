@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Shopping Bag</title>
+  
+</head>
+<style>
+    body{
+        padding: 40px;
+    }
+  
+    .fancy{
+      display: flex;
+      align-items: center;
+    }
+  </style>
+<body >
+  
+    
+    <h1>Shopping Bag</h1>
+
+   
+          
+          <div>
+            <img src="logo.jpg" />
+          </div>
+
+        
+            <div>
+              <h2 >GAMMALBYN</h2>
+              <p >3-seat sofa, grey</p>
+
+             
+              <div class="fancy">
+                <input type="button" (click)="increment()" value="+"/>
+                <p style="padding: 10px; border: 10px; border-color: black;">{{quantity}}</p>
+                <input type="button" (click)="decrement()" value="-"/>
+              </div>
+              <button (click)="removeItem()" >Remove</button>
+            </div>
+            
+           
+               
+             
+      
+        <h3>Order Summary</h3>
+
+        <div>
+          <span>Products  </span>
+          <span >Rs. 20,990</span>
+        </div>
+        <hr/>
+       
+              <input type="button"  (click)="getTotalButtonClick()" value="Get Total" />
+              <br/><br/>
+              <p>Total Amount : {{total}}</p>
+        <br><br>
+        Discount :  <input  [(ngModel)]="discount" placeholder="Enter Product Name" />
+        <br/><br/>
+            <button (click)="applyDiscount()" style="color: black; border-radius: 10px;"> Apply</button><br>
+         
+        <br>
+        <p>Total amount after discount : {{discountTotal}}</p>
+        <button style="background-color: blue; color: white; border-radius: 20px; padding: 20px;" (click)="checkout()">Continue to checkout ➔</button>
+  
+</body>
+</html>
